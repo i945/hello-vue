@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson 1-3</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- v-on 绑定  v-if做if判断-->
+</body>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                show: true,
+                content: 'Hello world!'
+            }
+        },
+        methods: {
+            handleBtnClick() {
+               this.show = !this.show;
+            }
+        },
+        template:`
+            <div>
+                <span v-if="show">{{content}}</span>
+                <button v-on:click="handleBtnClick">显示/隐藏</button>
+            </div>
+        `
+    }).mount('#root')
+</script>
+</html>
