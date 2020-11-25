@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson 2-4</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return{
+                message: 'hello!',
+                show: false,
+            }
+        },
+        // v-once 只渲染一次 可避免重复渲染
+        // v-if 判断语句
+        // v-html 不转义html标签
+        template:`
+            <div v-html="message"></div>
+            <div v-bind:title="message">{{message}}</div>
+            <div v-once>{{message}}</div>
+            <div>{{"a"+"b"}}</div>
+            <div v-if="show">{{message}}</div>
+        `
+    });
+    const vm = app.mount('#root');
+</script>
+</html>
