@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lesson 2-1</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+<script>
+    // createApp表示创建一个Vue应用, 存储到app
+    // app里传入的参数表示这个应用最外层的组件应该如何展示
+    //mvvm m--model 数据  v--view 视图 vm--视图数据连接
+    // data是model template是view  vm是 vm
+    const app = Vue.createApp({
+        data() {
+            return{
+                message: 'hello!'
+            }
+        },
+        template:`
+            <div>{{message}}</div>
+        `
+    });
+    // vm表示vue应用的根组件
+    const vm = app.mount('#root');
+</script>
+</html>
